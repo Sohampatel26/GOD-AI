@@ -167,4 +167,7 @@ This project is licensed under the MIT License.
 
 ---
 
-By following these instructions, you should be able to fine-tune a GPT model using religious texts and deploy it to provide useful and respectful answers to users' questions. If you have any questions or need further assistance, feel free to open an issue or contact the repository maintainer.
+By following these instructions, you should be able to fine-tune your own RAG using religious texts and deploy it to provide useful and respectful answers to users' questions. If you have any questions or need further assistance, feel free to open an issue or contact the repository maintainer.
+
+<img width="874" alt="image" src="https://github.com/user-attachments/assets/a2e3037d-2097-42d8-82e0-e7b87df37bb7">
+<img width="878" alt="image" src="https://github.com/user-attachments/assets/6d27171f-70bf-44a8-b80b-9830ea8b9313">
