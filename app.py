@@ -58,7 +58,7 @@ def generate_answer_with_gemini(query, retrieved_chunks):
     A user has asked the following question:
     "{query}"
     
-    Based on the teachings from the sacred texts, provide a compassionate and insightful answer. Ensure your response is deeply rooted in religious wisdom, addressing not just the question but offering emotional support as well.
+    Based on the teachings from the sacred texts, provide a compassionate and insightful answer. Ensure your response is deeply rooted in religious wisdom, addressing not just the question but offering emotional support as well. Focus more on Hinduism and the Vedas.
     
     Answer:
     """
@@ -80,7 +80,7 @@ st.set_page_config(
     page_icon="🌟"
 )
 
-# Apply custom CSS for styling
+# Apply custom CSS for styling and fixed footer
 st.markdown(
     """
     <style>
@@ -122,18 +122,19 @@ st.markdown(
         border-radius: 12px;
     }
 
+    /* Output text styling */
     .output-text {
         background-color: #2c3e50;
         padding: 20px;
-        font-size: 1.5em;
+        font-size: 1.4em; /* Set uniform font size for the output */
+        line-height: 1.8;
         border-radius: 15px;
         color: #ecf0f1;
-        line-height: 1.8;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     footer {
-        position: relative;
+        position: fixed;
         bottom: 0;
         width: 100%;
         text-align: center;
@@ -142,11 +143,12 @@ st.markdown(
         padding: 15px 0;
         font-size: 1.2em;
         letter-spacing: 1.5px;
+        z-index: 1000; /* Ensure footer stays on top */
     }
 
     .description {
         text-align: center;
-        font-size: 1.25em;
+        font-size: 1.5em;
         margin-bottom: 30px;
         color: #ecf0f1;
         line-height: 1.6;
@@ -202,7 +204,7 @@ if st.button("Ask GOD AI"):
             # Step 3: Generate an answer using Gemini Pro LLM with the retrieved chunks
             answer = generate_answer_with_gemini(query, retrieved_chunks)
 
-            # Display the answer in a styled box
+            # Display the answer in a styled box with uniform font size
             if answer:
                 st.subheader("GODAI's Answer:")
                 st.markdown(f'<div class="output-text">{answer}</div>', unsafe_allow_html=True)
@@ -211,7 +213,7 @@ if st.button("Ask GOD AI"):
     else:
         st.error("Please enter a question!")
 
-# Footer with your name
+# Footer with your name (Fixed footer)
 st.markdown(
     """
     <footer>
